@@ -1,16 +1,18 @@
-<link rel="stylesheet" type="text/css" href="<%= url("/application.css")%>">
 <body>
-  <h1 class="my-robots">My Robots</h1>
   <a href='robots/new'>Make a new Robot</a>
   <ul>
-    <% @robots.each do |robot| %>
-    <ul class="robots">
-      <img src="http://www.robohash.org/<%= robot.name %>">
-      <h3><a href="robots/<%= robot.id %>"><%= robot.name %></a></h3>
-      <p><%= robot.city %></p>
-      <p><%= robot.state %></p>
-      <p><%= robot.department %></p>
-    </ul>
-    <% end %>
+    <div class="row">
+      <ul class="robots">
+        <% @robots.each do |robot| %>
+        <div class="col-md-2">
+          <img class="index-robot" src="http://www.robohash.org/<%= robot.name %>">
+          <h4><a href="robots/<%= robot.id %>"><%= robot.name %></a></h4>
+          <p><%= robot.city %></p>
+          <p><%= robot.state %></p>
+          <p><%= robot.department %></p>
+        </div>
+        <% end %>
+      </ul>
+    </div>
   </ul>
 </body>
